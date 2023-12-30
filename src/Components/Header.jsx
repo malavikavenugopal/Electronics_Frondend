@@ -26,7 +26,7 @@ function Header() {
           </a>
         </li>
         <li class="nav-item ms-3 ">
-          <button className='btn btn-danger' onClick={handlelogout} >LOGOUT</button>
+          <button  style={{letterSpacing:"2px"}} className='btn btn-danger' onClick={handlelogout} >LOGOUT</button>
         </li>
       </ul>
      
