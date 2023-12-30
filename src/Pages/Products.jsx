@@ -65,7 +65,7 @@ function Products() {
             allProducts.length > 0 ?
               allProducts.map((items) => (
                 <>
-                  <div className="col-lg-3">
+                  <div className="col-lg-3 mt-3">
                     <article class="card__article">
                       <img className='w-100' height={350} src={items.img1} alt="image" class="card__img" />
 
