@@ -76,7 +76,10 @@ console.log(token);
 
   return (
     <div>
-        <Header/>
+        {
+            token &&
+            <>
+             <Header/>
         <section className='container mt-3' >
             <img  style={{height:"500px",opacity:"60%"}} className='w-100' src='https://img.freepik.com/free-photo/new-smartwatch-balancing-with-cliff_23-2150296475.jpg?w=1060&t=st=1703741847~exp=1703742447~hmac=3896c98f397d290e30ebecd34f8ffc43fd30d9ca523a43daecf163dbec017296'/>
         </section>
@@ -206,6 +209,9 @@ console.log(token);
         </div>   
         </section>    
 
+            </>
+        }
+       
         <ToastContainer position='top-center' theme='colored' autoClose={2000} />
     </div>
   )

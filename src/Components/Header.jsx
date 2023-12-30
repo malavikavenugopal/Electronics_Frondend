@@ -1,6 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Header() {
+
+  const navigate = useNavigate()
+  const handlelogout = () =>{
+    sessionStorage.removeItem("token")
+    sessionStorage.removeItem("existingadmin")
+    navigate("/")
+  }
   return (
     <div>
 
@@ -11,22 +19,15 @@ function Header() {
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarColor02">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item ">
           <a style={{letterSpacing:"2px"}} class="nav-link active" href="/products">HOME
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
-        
-        {/* <li class="nav-item dropdown">
-          <a  style={{letterSpacing:"2px"}}  class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">PRODUCTS</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">HeadPhones</a>
-            <a class="dropdown-item" href="#">Mobiles & Tablets</a>
-            <a class="dropdown-item" href="#">Cameras and Photography</a>
-            <a class="dropdown-item" href="#">GPS & Accessories</a>
-          </div>
-        </li> */}
+        <li class="nav-item ms-3 ">
+          <button className='btn btn-danger' onClick={handlelogout} >LOGOUT</button>
+        </li>
       </ul>
      
     </div>
