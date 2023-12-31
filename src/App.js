@@ -17,7 +17,6 @@ function App() {
        {/* path parameter */}
       <Route path={'/products/:id'} element={<ProductbyID/>} />     
       <Route path={'/listing'} element={<Listing/>} />      
-
     </Routes>
  
     </div>

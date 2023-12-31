@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import { createContext } from 'react'
-//to create contextapi we use the method - createContext()
 
+
+//to create contextapi we use the method - createContext()
 export const editProductResponseContext = createContext()
 
 function ContextShare({children}) {
@@ -15,14 +16,9 @@ function ContextShare({children}) {
     //children is a predefined props used to share data between all components
 
     <>
-
     <editProductResponseContext.Provider value={{editProductResponse,setEditProductResponse}}>
-
       {children}
-   </editProductResponseContext.Provider>
-   
-
-
+    </editProductResponseContext.Provider>
 
     </>
   )

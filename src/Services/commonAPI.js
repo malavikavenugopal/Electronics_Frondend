@@ -5,7 +5,7 @@ import axios from "axios"
     method:httpRequest,
     url,
     data:reqBody,
-    //since we have two types of contents to upload
+   
     headers:reqHeader?reqHeader:{"Content-Type":"application/json"}
   }
 //axios call

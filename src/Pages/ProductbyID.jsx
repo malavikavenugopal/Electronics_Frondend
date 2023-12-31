@@ -10,15 +10,20 @@ function ProductbyID() {
     //destructuring id using useparams
     const { id } = useParams()
     console.log(id);
+ 
+     
     const [allProducts, setAllProducts] = useState([])
+
+
     /*  context api  */
     const { editProductResponse, setEditProductResponse } = useContext(editProductResponseContext)
 
 
-    //to store search values from input box
+    //searchkey we want to share with the header thats why we are defining here
     const [searchKey, setSearchKey] = useState("")
-
-    const getAllProducts = async () => {
+   
+     //get the all products to check with given id
+     const getAllProducts = async () => {
         if (sessionStorage.getItem("token")) {
 
             const token = sessionStorage.getItem("token")
@@ -54,6 +59,7 @@ function ProductbyID() {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
     // navigation hook
     const navigate = useNavigate()
    //delete product by id
@@ -80,7 +86,8 @@ function ProductbyID() {
     return (
         <div>
             <Header />
-            {product &&
+        
+            { product &&
                 <section className='container mt-3'>
                     <div className="row container w-100 d-flex justify-content-center align-items-center">
                         <div className="col-lg-6">
@@ -113,7 +120,7 @@ function ProductbyID() {
                                     >
                                         
                                         <Modal.Body>
-                                         <h6  style={{ fontFamily: "Righteous" }}> Are you sure you want to delete '{product.name.slice(0,20)}...'</h6>
+                                         <h6  style={{ fontFamily: "Righteous" }}> Are you sure you want to delete '{product?.name.slice(0,20)}...'</h6>
                                         </Modal.Body>
                                         <Modal.Footer>
                                             <Button variant="secondary" onClick={handleClose}>

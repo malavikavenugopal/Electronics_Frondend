@@ -19,8 +19,6 @@ export const allProductAPI = async(searchKey,reqHeader) =>{
    return await commonAPI ('GET',`${BASE_URL}/product/get?search=${searchKey}`,"",reqHeader)
 }
 
-
-
 //product edit api
 
 export const editProductAPI = async(id,reqBody,reqHeader)=>{
@@ -28,9 +26,8 @@ export const editProductAPI = async(id,reqBody,reqHeader)=>{
       return await commonAPI("PUT",`${BASE_URL}/product/edit/${id}`,reqBody,reqHeader)
    }
    
-   
+
 // product delete api
-   
    
    export const removeProductAPI = async(id,reqHeader)=>{
       //path parameter - :id -router

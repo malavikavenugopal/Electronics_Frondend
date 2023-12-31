@@ -2,9 +2,11 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function Header() {
-
+  //navigation hook 
   const navigate = useNavigate()
+  //logout
   const handlelogout = () =>{
+    //removing token and existingadmin from sessionstorage while logout
     sessionStorage.removeItem("token")
     sessionStorage.removeItem("existingadmin")
     navigate("/")
@@ -26,6 +28,7 @@ function Header() {
           </a>
         </li>
         <li class="nav-item ms-3 ">
+         {/*  logout button */}
           <button  style={{letterSpacing:"2px"}} className='btn btn-danger' onClick={handlelogout} >LOGOUT</button>
         </li>
       </ul>

@@ -88,9 +88,7 @@ function Edit({ product }) {
         }
 
 
-
     }
-
 
     return (
         <div>
@@ -108,23 +106,32 @@ function Edit({ product }) {
                     {/*  about  */}
                     <label className='fw-bold'>About this item:</label>
                     <textarea value={editProduct.about} style={{ backgroundColor: 'grey' }} className='form-control' onChange={(e) => setEditProduct({ ...editProduct, about: e.target.value })} />
+
                     {/* color */}
                     <label className='fw-bold mt-2' >Color:</label>
                     <div className='d-flex mt-2'>
                         <input name='gadgets' type='radio' onChange={(e) => setEditProduct({ ...editProduct, color: e.target.value })} value="Black" /><label className='ms-2' style={{ color: "grey", fontWeight: "900" }}>Black</label>
-                    </div><div className='d-flex mt-2'>
+                    </div>
+                    <div className='d-flex mt-2'>
                         <input value="Red" name='gadgets' type='radio' onChange={(e) => setEditProduct({ ...editProduct, color: e.target.value })} /><label className='ms-2' style={{ fontWeight: "900", color: "red" }}  >Red</label>
-                    </div><div className='d-flex mt-2'>
+                    </div>
+                    <div className='d-flex mt-2'>
                         <input value="Green" name='gadgets' onChange={(e) => setEditProduct({ ...editProduct, color: e.target.value })} type='radio' /><label className='ms-2' style={{ color: "green", fontWeight: "900" }} >Green</label>
-                    </div><div className='d-flex mt-2'>
+                    </div>
+                    <div className='d-flex mt-2'>
                         <input value="White" name='gadgets' onChange={(e) => setEditProduct({ ...editProduct, color: e.target.value })} type='radio' /><label className='ms-2' style={{ color: "white", fontWeight: "900" }} >White</label>
                     </div>
+
                     {/*  images */}
                     <label className='fw-bold mt-2'>Upload the images:</label>
                     <input placeholder="URL" onChange={(e) => setEditProduct({ ...editProduct, img1: e.target.value })} value={editProduct.img1} type='text' className='form-control' style={{ borderRadius: "35px 35px 35px 35px", backgroundColor: 'grey' }} />
+
                     <input placeholder="URL" onChange={(e) => setEditProduct({ ...editProduct, img2: e.target.value })} type='text' value={editProduct.img2} className='form-control mt-3' style={{ borderRadius: "35px 35px 35px 35px", backgroundColor: 'grey' }} />
+
                     <input onChange={(e) => setEditProduct({ ...editProduct, img3: e.target.value })} placeholder="URL" value={editProduct.img3} type='text' className='form-control mt-3' style={{ borderRadius: "35px 35px 35px 35px", backgroundColor: 'grey' }} />
+
                     <input placeholder="URL" type='text' onChange={(e) => setEditProduct({ ...editProduct, img4: e.target.value })} value={editProduct.img4} className='form-control mt-3' style={{ borderRadius: "35px 35px 35px 35px", backgroundColor: 'grey' }} />
+
                     {/* price      */}
                     <label className='fw-bold mt-2'>Price:</label>
                     <input value={editProduct.price} style={{ backgroundColor: 'grey' }} placeholder='Amount' onChange={(e) => setEditProduct({ ...editProduct, price: e.target.value })} type='number' className='form-control w-50' />
@@ -134,6 +141,7 @@ function Edit({ product }) {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
+                    {/* update button */}
                     <Button onClick={handleUpdate} variant="success">Update</Button>
                 </Modal.Footer>
             </Modal>
